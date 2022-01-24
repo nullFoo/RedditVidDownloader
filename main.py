@@ -3,7 +3,6 @@ from moviepy.editor import *
 import requests
 import urllib.request
 import glob
-import secrets
 from random import randint
 
 def logStr(string):
