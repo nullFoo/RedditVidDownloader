@@ -1,15 +1,10 @@
 import os
 from moviepy.editor import *
-import praw
 import requests
 import urllib.request
 import glob
 import secrets
-
-reddit = praw.Reddit(client_id=secrets.clientID,
-                 client_secret=secrets.clientSecret,
-                 user_agent=secrets.prawName)
-      
+from random import randint
 
 def logStr(string):
     print("")
@@ -20,7 +15,7 @@ def logStr(string):
     
 def getVideo(link):
     logStr("Finding media links")
-    r = requests.get(redditLink + ".json", headers = {'User-agent': secrets.clientID})
+    r = requests.get(redditLink + ".json", headers = {'User-agent': str(randint(0,10000)})
     videoLink = r.json()[0]["data"]["children"][0]["data"]["secure_media"]["reddit_video"]["fallback_url"]
     logStr("Getting video and audio data")
     urllib.request.urlretrieve(
