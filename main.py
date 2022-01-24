@@ -15,7 +15,7 @@ def logStr(string):
     
 def getVideo(link):
     logStr("Finding media links")
-    r = requests.get(redditLink + ".json", headers = {'User-agent': str(randint(0,10000)})
+    r = requests.get(redditLink + ".json", headers = {'User-agent': str(randint(0,10000))})
     videoLink = r.json()[0]["data"]["children"][0]["data"]["secure_media"]["reddit_video"]["fallback_url"]
     logStr("Getting video and audio data")
     urllib.request.urlretrieve(
