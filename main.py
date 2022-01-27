@@ -43,6 +43,7 @@ def clearTempFiles():
     for f in files:
         os.remove(f)
 
-redditLink = input("Post link: ")
-getVideo(redditLink)
-clearTempFiles()
+if(__name__ == "__main__"):
+    redditLink = input("Post link: ")
+    getVideo(redditLink)
+    clearTempFiles()
